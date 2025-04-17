@@ -104,8 +104,30 @@ public class Calculator implements ActionListener{
         for(int i = 0; i<10; i++){
             if(e.getSource() == numberButtons[i]){
                 textfield.setText(textfield.getText().concat(String.valueOf(i)));
-                text
+
             }
+        }
+
+        if(e.getSource() == decButton){
+            textfield.setText(textfield.getText().concat("."));
+        }
+
+        if(e.getSource() == addButton){
+            num1 = Double.parseDouble(textfield.getText());
+            operator = '+';
+            textfield.setText("");
+        }
+
+        if(e.getSource() == mulButton){
+            num1 = Double.parseDouble(textfield.getText());
+            operator = '*';
+            textfield.setText("");
+        }
+
+        if(e.getSource() == divButton){
+            num1 = Double.parseDouble(textfield.getText());
+            operator = '/';
+            textfield.setText("");
         }
     }
 }
