@@ -129,5 +129,44 @@ public class Calculator implements ActionListener{
             operator = '/';
             textfield.setText("");
         }
+        if(e.getSource() == equButton){
+            num2 = Double.parseDouble(textfield.getText());
+
+            switch(operator){
+                case'+':
+                    result = num1 + num2;
+                    break;
+
+                case'-':
+                    result = num1 - num2;
+                    break;
+
+                case'*':
+                    result = num1 * num2;
+                    break;
+
+                case'/':
+                    result = num1 / num2;
+                    break;
+            }
+
+            textfield.setText(String.valueOf(result));
+            num1 = result;
+        }
+
+        if(e.getSource() == clrButton){
+           textfield.setText("");
+        }
+
+        if(e.getSource() == delButton){
+            String string = textfield.getText();
+            textfield.setText("");
+
+            for(int i = 0; i < string.length() - 1; i++){
+                textfield.setText(textfield.getText() + string.charAt(i));
+            }
+        }
+
+
     }
 }
